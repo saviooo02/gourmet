@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import RecipeInput from "./components/RecipeInput";
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <>
       <Navbar></Navbar>
       <Hero></Hero>
+      <RecipeInput></RecipeInput>
     </>
   )
 }
