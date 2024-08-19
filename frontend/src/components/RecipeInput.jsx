@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 const RecipeInput = () => {
     const [formdata, setFormdata] = useState({ ingredients: "", time: "", cuisine: "" });
@@ -20,7 +20,7 @@ const RecipeInput = () => {
     return (
         <form 
             onSubmit={handleSubmit} 
-            className="max-w-md mx-auto p-6 bg-slate-100 shadow-md rounded-md flex flex-col gap-4"
+            className="max-w-lg mx-auto p-6 bg-slate-100 shadow-md rounded-md flex flex-col gap-4"
         >
             <label 
                 htmlFor="ingredients" 
@@ -34,7 +34,7 @@ const RecipeInput = () => {
                 value={formdata.ingredients}
                 name="ingredients"
                 placeholder="Enter Ingredients"
-                className="mt-1 p-2 w-full border border-slate-100 rounded-md focus:ring focus:ring-indigo-200"
+                className="mt-1 p-2 w-full border border-slate-300 rounded-md focus:ring focus:ring-indigo-200"
             />
 
             <label 
@@ -69,7 +69,7 @@ const RecipeInput = () => {
 
             <button 
                 type="submit" 
-                className="mt-4 py-2 px-4 bg-slate-600 text-white font-semibold rounded-md hover:bg-indigo-500 transition"
+                className="mt-4 py-2 px-4 bg-slate-600 text-white font-semibold rounded-md hover:bg-slate-700 transition"
             >
                 Generate
             </button>
@@ -78,3 +78,4 @@ const RecipeInput = () => {
 };
 
 export default RecipeInput;
+

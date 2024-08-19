@@ -1,15 +1,17 @@
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import RecipeInput from "./components/RecipeInput";
+import RecipeContainer from "./components/RecipeContainer";
+
+
 
 
 function App() {
   return (
-    <>
+    <div  className="bg-slate-100">
       <Navbar></Navbar>
       <Hero></Hero>
-      <RecipeInput></RecipeInput>
-    </>
+      <RecipeContainer></RecipeContainer>
+    </div>
   )
 }
 
