@@ -24,7 +24,7 @@ const RecipeInput = () => {
         >
             <label 
                 htmlFor="ingredients" 
-                className="block text-sm font-medium text-slate-600"
+                className="block text-sm font-medium text-slate-500"
             >
                 Ingredients:
             </label>
@@ -39,7 +39,7 @@ const RecipeInput = () => {
 
             <label 
                 htmlFor="time" 
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-slate-500"
             >
                 Time:
             </label>
@@ -54,7 +54,7 @@ const RecipeInput = () => {
 
             <label 
                 htmlFor="cuisine" 
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-slate-500"
             >
                 Cuisine:
             </label>

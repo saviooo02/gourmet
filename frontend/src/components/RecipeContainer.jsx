@@ -3,7 +3,7 @@ import RecipeOutput from './RecipeOutput';
 
 const RecipeContainer = () => {
     return (
-        <div className="flex flex-col lg:flex-row gap-4 mx-auto p-6 max-w-screen-lg">
+        <div className="bg-slate-100 flex flex-col lg:flex-row gap-4 mx-auto p-6 max-w-screen-lg">
             <div className="flex-1">
                 <RecipeInput />
             </div>
