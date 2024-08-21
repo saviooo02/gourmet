@@ -1,80 +1,92 @@
-import { useState } from "react";
+import PropTypes from 'prop-types';
+import { useState } from 'react';
 
-const RecipeInput = () => {
+const RecipeInput = ({ setRecipe }) => {
     const [formdata, setFormdata] = useState({ ingredients: "", time: "", cuisine: "" });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formdata);
+        try {
+            const response = await fetch('http://localhost:3000/api/recipe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formdata),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            console.log('API response:', data); // Debugging line
+
+            // Check if the data has a recipe property and if it's in the correct format
+            if (typeof data.recipe === 'string') {
+                setRecipe(data.recipe); // Set the generated text in the state
+            } else {
+                console.error('Unexpected response format:', data);
+                setRecipe('No recipe generated.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            setRecipe('Error generating recipe.');
+        }
     };
 
     const handleUpdate = (e) => {
-        const changedField = e.target.name;
-        const changedValue = e.target.value;
-        setFormdata((currData) => {
-            currData[changedField] = changedValue;
-            return { ...currData };
-        });
+        const { name, value } = e.target;
+        setFormdata((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
     };
 
     return (
-        <form 
-            onSubmit={handleSubmit} 
-            className="max-w-lg mx-auto p-6 bg-slate-100 shadow-md rounded-md flex flex-col gap-4"
-        >
-            <label 
-                htmlFor="ingredients" 
-                className="block text-sm font-medium text-slate-500"
-            >
-                Ingredients:
-            </label>
+        <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-6 bg-slate-100 shadow-md rounded-md flex flex-col gap-4">
+            <label htmlFor="ingredients" className="block text-sm font-medium text-slate-500">Ingredients:</label>
             <input 
                 type="text"
                 onChange={handleUpdate}
                 value={formdata.ingredients}
                 name="ingredients"
+                required
                 placeholder="Enter Ingredients"
                 className="mt-1 p-2 w-full border border-slate-300 rounded-md focus:ring focus:ring-indigo-200"
             />
 
-            <label 
-                htmlFor="time" 
-                className="block text-sm font-medium text-slate-500"
-            >
-                Time:
-            </label>
+            <label htmlFor="time" className="block text-sm font-medium text-slate-500">Time:</label>
             <input 
                 type="text"
                 onChange={handleUpdate}
                 value={formdata.time}
                 name="time"
+                required
                 placeholder="Enter time"
                 className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
             />
 
-            <label 
-                htmlFor="cuisine" 
-                className="block text-sm font-medium text-slate-500"
-            >
-                Cuisine:
-            </label>
+            <label htmlFor="cuisine" className="block text-sm font-medium text-slate-500">Cuisine:</label>
             <input 
                 type="text"
                 onChange={handleUpdate}
                 value={formdata.cuisine}
                 name="cuisine"
+                required
                 placeholder="Enter cuisine"
                 className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
             />
 
-            <button 
-                type="submit" 
-                className="mt-4 py-2 px-4 bg-slate-600 text-white font-semibold rounded-md hover:bg-slate-700 transition"
-            >
+            <button type="submit" className="mt-4 py-2 px-4 bg-slate-600 text-white font-semibold rounded-md hover:bg-slate-700 transition">
                 Generate
             </button>
         </form>
     );
+};
+
+RecipeInput.propTypes = {
+    setRecipe: PropTypes.func.isRequired
 };
 
 export default RecipeInput;
