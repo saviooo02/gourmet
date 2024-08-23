@@ -20,11 +20,10 @@ const RecipeInput = ({ setRecipe }) => {
             }
 
             const data = await response.json();
-            console.log('API response:', data); // Debugging line
+            
 
-            // Check if the data has a recipe property and if it's in the correct format
             if (typeof data.recipe === 'string') {
-                setRecipe(data.recipe); // Set the generated text in the state
+                setRecipe(data.recipe); 
             } else {
                 console.error('Unexpected response format:', data);
                 setRecipe('No recipe generated.');
