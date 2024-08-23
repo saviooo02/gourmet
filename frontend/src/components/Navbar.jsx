@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="bg-slate-100 text-slate-600 font-inter px-6 py-4 flex justify-end items-center">
       <div className="flex space-x-11">
         <a
-          href="https://github.com/your-username"
+          href="https://github.com/saviooo02/gourmet"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-slate-400"
@@ -14,7 +14,7 @@ const Navbar = () => {
           <FaGithub size={24} />
         </a>
         <a
-          href="https://linkedin.com/in/your-username"
+          href="https://www.linkedin.com/in/saviooo02/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-slate-400"

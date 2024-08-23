@@ -62,7 +62,7 @@ const RecipeInput = ({ setRecipe }) => {
                 value={formdata.time}
                 name="time"
                 required
-                placeholder="Enter time"
+                placeholder="Enter time in minutes"
                 className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
             />
 
@@ -73,7 +73,7 @@ const RecipeInput = ({ setRecipe }) => {
                 value={formdata.cuisine}
                 name="cuisine"
                 required
-                placeholder="Enter cuisine"
+                placeholder="Enter type of cuisine"
                 className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
             />
 
