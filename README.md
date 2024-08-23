@@ -1,7 +1,7 @@
 
 # Gourmet
 
-(./src/assets/Gourmet_img.png)
+![Gourmet Project](./frontend/src/assets/Gourmet_img.png)
 
 This AI-Powered Recipe Generator is a web application that uses the GroqCloud API to generate recipes based on user-inputted ingredients, cooking time, and cuisine type. The frontend is built with React and styled with Tailwind CSS, while the backend is powered by Express.js and Node.js
 
