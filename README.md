@@ -6,7 +6,7 @@
 This AI-Powered Recipe Generator is a web application that uses the GroqCloud API to generate recipes based on user-inputted ingredients, cooking time, and cuisine type. The frontend is built with React and styled with Tailwind CSS, while the backend is powered by Express.js and Node.js
 
 
-## Features
+## Features 
 
 - **Ingredient Input**: Users can input various ingredients, specify cooking time, and choose a cuisine type.
 - **AI-Generated Recipes**: The application utilizes GroqCloud API to generate creative and unique recipes.
