@@ -8,12 +8,6 @@
           { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
         ]
       }
-    ],
-    "rewrites": [
-      {
-        "source": "/",
-        "destination": "https://gourmet-server.vercel.app/"
-      }
     ]
   }
   

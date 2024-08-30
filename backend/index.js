@@ -28,7 +28,7 @@ app.use(limiter);
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 // Route to handle recipe generation
-app.post("/", async (req, res) => {
+app.post("/recipe", async (req, res) => {
   const formdata = req.body;
 
   const prompt = `Generate a ${formdata.cuisine} recipe with ingredients like ${formdata.ingredients} in ${formdata.time} minutes.`;
