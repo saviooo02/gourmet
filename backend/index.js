@@ -27,10 +27,6 @@ app.use(limiter);
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-app.listen(3000, () => {
-  console.log("Listening on port 3000");
-});
-
 // Route to handle recipe generation
 app.post("/", async (req, res) => {
   const formdata = req.body;
