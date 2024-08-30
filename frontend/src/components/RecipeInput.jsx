@@ -10,7 +10,7 @@ const RecipeInput = ({ setRecipe }) => {
             const response = await fetch('https://gourmet-server.vercel.app/recipe', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'text/plain',
                 },
                 body: JSON.stringify(formdata),
             });
