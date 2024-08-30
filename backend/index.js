@@ -7,8 +7,9 @@ require("dotenv").config();
 
 const app = express();
 
+// Configure CORS to allow requests from your frontend domain
 const corsOptions = {
-  origin: "https://gourmet02.vercel.app",
+  origin: "https://gourmet02.vercel.app", // Replace with your frontend domain
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 };
