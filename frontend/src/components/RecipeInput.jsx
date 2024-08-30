@@ -7,7 +7,7 @@ const RecipeInput = ({ setRecipe }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://gourmet-server.vercel.app', {
+            const response = await fetch('https://gourmet-server.vercel.app/recipe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
