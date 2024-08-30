@@ -32,7 +32,7 @@ app.listen(3000, () => {
 });
 
 // Route to handle recipe generation
-app.post("/api/recipe", async (req, res) => {
+app.post("/", async (req, res) => {
   const formdata = req.body;
 
   const prompt = `Generate a ${formdata.cuisine} recipe with ingredients like ${formdata.ingredients} in ${formdata.time} minutes.`;
