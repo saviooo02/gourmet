@@ -9,7 +9,7 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: "https://gourmet02.vercel.app/", // Replace with your frontend domain
+  origin: "https://gourmet02.vercel.app", // Replace with your frontend domain
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
   credentials: true, // Allow cookies and authentication headers
