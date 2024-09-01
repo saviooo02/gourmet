@@ -7,21 +7,13 @@ require("dotenv").config();
 
 const app = express();
 
-// CORS configuration
-const corsOptions = {
-  origin: "https://gourmet-client.vercel.app/",
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"],
-  credentials: true,
-};
+app.use(cors());
 
 const limiter = rateLimit({
   windowMs: 1 * 60 * 1000,
   max: 10,
   message: "Too many requests from this IP, please try again later.",
 });
-
-app.use(cors(corsOptions)); // Apply CORS configuration
 
 app.use(bodyParser.json());
 app.use(limiter);
