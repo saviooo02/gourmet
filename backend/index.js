@@ -7,13 +7,11 @@ require("dotenv").config();
 
 const app = express();
 
-// CORS configuration
-const corsOptions = {
-  origin: "https://gourmet-client.vercel.app/",
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"],
-  credentials: true,
-};
+app.listen(3000, function () {
+  console.log("Server listening on Port 3000");
+});
+
+app.use(cors());
 
 const limiter = rateLimit({
   windowMs: 1 * 60 * 1000,
@@ -21,15 +19,13 @@ const limiter = rateLimit({
   message: "Too many requests from this IP, please try again later.",
 });
 
-app.use(cors(corsOptions)); // Apply CORS configuration
-
 app.use(bodyParser.json());
 app.use(limiter);
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 // Route to handle recipe generation
-app.post("/recipe", async (req, res) => {
+app.post("/api/recipe", async (req, res) => {
   const formdata = req.body;
 
   const prompt = `Generate a ${formdata.cuisine} recipe with ingredients like ${formdata.ingredients} in ${formdata.time} minutes.`;
