@@ -9,10 +9,10 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: "https://gourmet-client.vercel.app/", // Replace with your frontend domain
+  origin: "https://gourmet-client.vercel.app/",
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
-  credentials: true, // Allow cookies and authentication headers
+  credentials: true,
 };
 
 const limiter = rateLimit({
